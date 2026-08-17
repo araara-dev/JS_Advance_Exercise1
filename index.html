@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Web Output</title>
+     <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #fff5f8;
+        color: #5a3d45;
+    }
+
+    h1 {
+        color: #c96f8a;
+        border-bottom: 3px solid #e8a8b8;
+        padding-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    h3 {
+        color: #b85c78;
+    }
+
+    .input-section,
+    .controls-section {
+        margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    select {
+        padding: 6px;
+        border: 1px solid #e8a8b8;
+        border-radius: 5px;
+        background-color: #fffafb;
+    }
+
+    input[type="text"]:focus,
+    select:focus {
+        outline: none;
+        border-color: #c96f8a;
+    }
+
+    button {
+        margin-right: 5px;
+        padding: 6px 10px;
+        cursor: pointer;
+        border: 1px solid #d98ba2;
+        border-radius: 5px;
+        background-color: #f8d7e1;
+        color: #6b3d4b;
+    }
+
+    button:hover {
+        background-color: #efb8c9;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-bottom: 15px;
+    }
+
+    td {
+        padding: 5px 10px;
+    }
+    .even {
+        color: #c45f82;
+        background-color: #ffe1eb;
+        font-weight: bold;
+        padding: 3px 8px;
+        border-radius: 10px;
+    }
+    .odd {
+        color: #a85c91;
+        background-color: #f3dff0;
+        font-weight: bold;
+        padding: 3px 8px;
+        border-radius: 10px;
+    }
+
+    .results-section {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #a94f6d;
+    }
+
+    .results-section div {
+        margin-bottom: 5px;
+        padding: 5px 8px;
+        background-color: #fde3eb;
+        border-radius: 5px;
+        width: fit-content;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #e8b6c4;
+    }
+
+    label {
+        color: #704552;
+    }
+</style>
+</head>
+<body>
+    <h1>Javascript Web Output #1</h1>
+
+    <div class="input-section">
+        <label for="numInput">Insert any Positive Numbers: </label>
+        <input type="text" id="numInput">
+        <br><br>
+        <button onclick="insertNumber()">Insert</button>
+        <button onclick="clearEntry()">Clear Entry</button>
+    </div>
+
+    <hr>
+
+    <h3>Inserted Numbers</h3>
+    
+
+    <table id="numberTable">
+        <tbody id="itemList"></tbody>
+    </table>
+
+    <div class="controls-section">
+        <button onclick="clearItems()">Clear Items</button>
+        <button onclick="getTotal()">Get Total</button>
+        <button onclick="getHighestLowest()">Identify Highest and Lowest Number</button>
+        
+        <label for="sortSelect">Sort By: </label>
+        <select id="sortSelect" onchange="sortItems(this.value)">
+            <option value="" disabled selected>Please select</option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+    </div>
+
+
+    <div class="results-section" id="results"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
